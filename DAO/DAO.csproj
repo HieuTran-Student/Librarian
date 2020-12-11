@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD26A072-3CC4-43B3-A39F-4EEA2214FB11}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAO</RootNamespace>
+    <AssemblyName>DAO</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Book_DAO\CTNhapSach_DAO.cs" />
+    <Compile Include="Book_DAO\DauSach_DAO.cs" />
+    <Compile Include="Book_DAO\NhapSach_DAO.cs" />
+    <Compile Include="Book_DAO\Sach_DAO.cs" />
+    <Compile Include="Book_DAO\TheLoai_DAO.cs" />
+    <Compile Include="Borrow_DAO\CTMuonSach_DAO.cs" />
+    <Compile Include="Borrow_DAO\CTTraSach_DAO.cs" />
+    <Compile Include="Borrow_DAO\MuonSach_DAO.cs" />
+    <Compile Include="Borrow_DAO\TraSach_DAO.cs" />
+    <Compile Include="CTMuonSach.cs">
+      <DependentUpon>QuanLyThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTNhapSach.cs">
+      <DependentUpon>QuanLyThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTTraSach.cs">
+      <DependentUpon>QuanLyThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DauSach.cs">
+      <DependentUpon>QuanLyThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocGia.cs">
+      <DependentUpon>QuanLyThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian_DAO\NhanVien_DAO.cs" />
+    <Compile Include="MuonSach.cs">
+      <DependentUpon>QuanLyThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>QuanLyThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhapSach.cs">
+      <DependentUpon>QuanLyThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyThuVien.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyThuVien.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyThuVien.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyThuVien.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyThuVien.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Reader_DAO\DocGia_DAO.cs" />
+    <Compile Include="Reader_DAO\TheThuVien_DAO.cs" />
+    <Compile Include="Sach.cs">
+      <DependentUpon>QuanLyThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>QuanLyThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TheLoai.cs">
+      <DependentUpon>QuanLyThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TheThuVien.cs">
+      <DependentUpon>QuanLyThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TraSach.cs">
+      <DependentUpon>QuanLyThuVien.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{4dfe3956-6a57-439d-97bc-7bfdf2ca4bca}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="QuanLyThuVien.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyThuVien.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QuanLyThuVien.edmx.diagram">
+      <DependentUpon>QuanLyThuVien.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QuanLyThuVien.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyThuVien.edmx</DependentUpon>
+      <LastGenOutput>QuanLyThuVien.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QuanLyThuVien.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyThuVien.edmx</DependentUpon>
+      <LastGenOutput>QuanLyThuVien.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
